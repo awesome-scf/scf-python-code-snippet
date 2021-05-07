@@ -1,0 +1,24 @@
+app: 'scf-python-code-snippet'
+stage: 'dev'
+
+component: scf 
+name: apigw_web 
+
+inputs:
+  name: ${name}-${stage}-${app}
+  src: .
+  handler: index.main_handler
+  runtime: Python3.6
+  events:
+    - apigw:
+        parameters:
+          serviceName: apigw_web
+          protocols:
+            - http
+          description: the serverless service
+          environment: release
+          endpoints:
+            - path: /
+              method: GET
+              function:
+                isIntegratedResponse: true
