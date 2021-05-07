@@ -1,0 +1,14 @@
+app: 'scf-python-code-snippet'
+stage: 'dev'
+
+component: scf 
+name: env_read 
+
+inputs:
+  name: ${name}-${stage}-${app}
+  src: .
+  handler: index.main_handler
+  runtime: Python3.6
+  environment: 
+    variables: 
+      TESTKEY: test_value
