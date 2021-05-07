@@ -1,0 +1,14 @@
+app: 'scf-python-code-snippet'
+stage: 'dev'
+
+component: scf 
+name: mysql_connect 
+
+inputs:
+  name: ${name}-${stage}-${app}
+  src: .
+  handler: index.main_handler
+  runtime: Python3.6
+  vpcConfig: 
+    vpcId: vpc-xxx
+    subnetId: subnet-xxx
