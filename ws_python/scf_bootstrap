@@ -1,2 +1,2 @@
 #!/bin/bash
-/var/lang/node12/bin/node app.js
+/var/lang/python3/bin/python3 -u index.py
